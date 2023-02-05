@@ -6,35 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel ='styles' href ='styles.css'>
+    <link rel='stylesheet' href='styles.css'>
 </head>
 
 <body>
-    <!--Numbers-->
-<div class='calculator'>
-    <div class ='calcDisplay'>0</div>
-    <div class ='calcKeys'>...</div>
-</div>
-<div class= 'calcKeys'>
-    <button class = 'key--operator' data-action='add'>+</button>
-    <button class = 'key--operator' data-action='subtract'>-</button>
-    <button class = 'key--operator' data-action='multiply'>&times;</button>
-    <button class = 'key--operator' data-action='divide'>÷</button>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button class ='key--equal' data-action='calculate'>=</button>
-</div>
-    <!--Javascript-->
-    <script src = 'script.js'>
+    <header>Calculator</header>
+    <div class='calculator-container'>
+        <div class = 'display'>
+            <p class = 'displayNumber'>0</p>
+        
+        </div>
+        <!--Numbers-->
+        <div class= 'calcKeys'>
+            <!--
 
-</script>
+            -->
+            <div class ='row-0'>
+                <button id = 'buttons' class = 'AC'>AC</button>
+                <button id = 'buttons' class = 'neg-pos'>+/-</button>
+                <button id = 'buttons' class = 'percent'>%</button>
+                <button id = 'operator' class = 'divide'>÷</button>    
+            </div>
+
+            <div class ='row-1'>
+                <button id = 'buttons' class = 'one'>1</button>
+                <button id = 'buttons' class = 'two'>2</button>
+                <button id = 'buttons' class = 'three'>3</button>
+                <button id = 'operator' class = 'multiply'>x</button>    
+
+            </div>
+
+            <div class ='row-2'>
+                <button id = 'buttons' class = 'four'>4</button>
+                <button id = 'buttons' class = 'five'>5</button>
+                <button id = 'buttons' class = 'six'>6</button>
+                <button id = 'operator' class = 'subtract'>-</button>    
+
+            </div>
+            <div class ='row-3'>
+                <button id = 'buttons' class = 'seven'>7</button>
+                <button id = 'buttons' class = 'eight'>8</button>
+                <button id = 'buttons' class = 'nine'>9</button>
+                <button id = 'operator' class = 'add'>+</button>    
+
+            </div>
+            <div class='row-4'>
+                <button id = 'buttons' class = 'zero'>0</button>
+                <button id = 'operator' class = 'decimal'>.</button>    
+                <button id = 'operator' class = 'equal'>=</button>    
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--Javascript-->
+    <script src = 'script.js'></script>
 
 </body>
 
