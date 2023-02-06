@@ -72,12 +72,14 @@ header{
 .row-4{
     display:flex;
     flex-wrap: wrap;
-    gap:32px;
-    margin:12px;
+    gap:16px;
+    margin:8px;
 
 }
 
 #buttons.zero{
     border-radius: 90px;
- width:155.466px;
+    width:140px;
+    padding-left:28px;
+    text-align: start;
 }

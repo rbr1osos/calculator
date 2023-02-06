@@ -14,8 +14,7 @@ const nine_button = document.querySelector('.nine');
 const zero_button = document.querySelector('.zero');
 const display_div = document.querySelector('p')
 const add_button = document.querySelector('.add');
-let num1 = 0;
-
+let num1 =[]
 //when button is pressed, add a div to a container
 // have display show the container
 one_button.addEventListener('click',() =>{
@@ -30,10 +29,34 @@ add_button.addEventListener('click',()=>{
 })
 
 function changeDisplay(num){
-    console.log(num)
-    num1 = num1+ parseInt(num,10);
-    // let newNum = document.createElement('p');
-    // newNum.classList.add('newNum');
-    num1.textContent = num;
+
+
+    //add numbers into an array(num1) 
+        if(isNaN(num)===false){ //if a number
+            parseInt(num,10) //change to a number
+            let newNum =num1.join('');
+            num1.push(num);
+
+            /*  display number  */
+            let num_p = document.createElement('p');
+            num_p.classList.add('newNum');
+            num_p.textContent = num;
+            display_div.appendChild(num_p);
+            return num1
+        }
+        else{
+            num1.push(num)
+            convertNumber(num);
+
+
+            /* display operator */
+            let num_p = document.createElement('p');
+            num_p.textContent = num;
+            display_div.appendChild(num_p);
+
+        }
+}
+
+function convertNumber(num){
     console.log(num1)
 }
