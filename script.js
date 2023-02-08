@@ -46,6 +46,15 @@ backspace_button.addEventListener('click',()=>{
     backOne();
 })
 
+function roundNumber(number){
+if (Number.isInteger(number)&& number.length>11){
+    return number.toExponential()
+
+}
+return Math.round(number*100,2)/100;
+}
+
+
 function backOne(){
     let currentNumber= userInput.textContent;
     let newNum= currentNumber.substring(0,currentNumber-1)
@@ -93,7 +102,7 @@ function evaluate(){
        
     }
     secondOperand = userInput.textContent;
-    userInput.textContent= operate(firstOperand,operatorChosen,secondOperand)
+    userInput.textContent= roundNumber(operate(firstOperand,operatorChosen,secondOperand))
     pastInput.textContent= `${firstOperand}${operatorChosen}${secondOperand}`
 }
 
