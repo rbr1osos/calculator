@@ -29,9 +29,26 @@ footer{
     background: #d6d6d6;
 }
 
+.shameOnYou{
+    background-image: url(images/hmm.png);
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    padding:12px;
+    flex:1;
+    background-color:white;
+    border-radius: 8px;
+    height:128px
+
+
+}
 #display-container{
     display:flex;
     flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    padding:12px;
     flex:1;
     background-color:white;
     border-radius: 8px;
@@ -52,7 +69,7 @@ footer{
     margin-bottom: 16px;
 }
 #display{
-    font: 800 24px sans-serif;
+    font: 800 32px sans-serif;
 }
 .buttons,
 .operator,
@@ -80,86 +97,3 @@ footer{
   grid-column-start: 1;
   grid-column-end:3;
 }
-
-
-/* 
-header{
-    background-color: white;
-    font-size: 32px;
-    font-weight: 700;
-    font-family: sans-serif;
-    padding:56px;
-    text-align: center;
-}
-.calculator-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20vh;
-
-
-}
-
-.num1{
-    display:flex;
-    font-size: 24px;
-    text-align: right;
-}
-.display-container{
-    display:flex;
-    flex:1;
-    flex-direction: column;
-    align-items: end;
-    justify-content: flex-end;
-    padding:16px;
-    height:56px;
-    width:400px;
-    background-color: white;
-}
-.display{
-    padding:8px;
-    font-size: 24px;
-    font-family: sans-serif;
-    font-weight: 800;
-}
-#buttons, #operator{
-    background-color: white;
-    border:none;
-    width:60px;
-    padding:16px;
-    font-size: 24px;
-    border-radius: 50%;
-}
-
-.calcKeys{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    width:400px;
-}
-
-.calcKeys{
-    background-color:grey;
-    display:flex;
-    align-items: center;
-}
-
-.row-0,
-.row-1,
-.row-2,
-.row-3,
-.row-4{
-    display:flex;
-    flex-wrap: wrap;
-    gap:16px;
-    margin:8px;
-
-}
-
-#buttons.zero{
-    border-radius: 90px;
-    width:140px;
-    padding-left:28px;
-    text-align: start;
-} */
