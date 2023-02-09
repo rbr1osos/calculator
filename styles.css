@@ -83,6 +83,18 @@ footer{
     font-weight: 700;
 
 }
+.buttons:hover{
+    background-color: rgb(212, 212, 212);
+}
+
+.operator:hover{
+    background-color:#e07801;
+
+}
+.functions:hover{
+    background-color: #707070;
+
+}
 .functions{
     color:white;
     background-color: #a1a1a1;
