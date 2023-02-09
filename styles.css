@@ -22,6 +22,7 @@ footer{
 
 }
 #calculator-container{
+    box-shadow:12px 12px 15px rgb(27, 27, 27);
     border-radius: 16px;
     padding:16px;
     height:450px;

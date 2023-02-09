@@ -1,8 +1,10 @@
+/* Need to figure out a way to limit amount of numbers on the screen */
+/* execute total after another number is pressed */
+
 const keys_div = document.querySelectorAll('.calcKeys');
 const userInput = document.getElementById('display')
 const pastInput = document.getElementById('raw-display')
 const calculator_container= document.getElementById('calculator-container')
-
 const display_container= document.getElementById('display-container')
 const number_button = document.querySelectorAll('[data-number]')
 const operator_button = document.querySelectorAll('[data-operator]')
@@ -11,7 +13,8 @@ const clear_button = document.getElementById('clear');
 const backspace_button = document.getElementById('backspace')
 
 let firstOperand='';
-let SecondOperand='';
+let secondOperand='';
+let totalKept='';
 let operatorChosen= null;
 let resetScreen= false;
 
@@ -30,12 +33,7 @@ function appendNumber(number){
         reset();
     }
     userInput.textContent+=number
-
-     if ((userInput.textContent).length>11){
-         let numbers= (userInput.textContent).substring(1)
-         userInput.textContent= numbers;
-
-    }
+    
 }
 
 evaluate_button.addEventListener('click',()=>{
@@ -47,34 +45,23 @@ backspace_button.addEventListener('click',()=>{
 })
 
 function roundNumber(number){
-if (Number.isInteger(number)&& number.length>11){
-    return number.toExponential()
-
-}
-return Math.round(number*100,2)/100;
+    return Math.round(number*1000)/1000
 }
 
 
 function backOne(){
-    let currentNumber= userInput.textContent;
-    let newNum= currentNumber.substring(0,currentNumber-1)
-    let newString= newNum.replace(/.$/,'');
-    userInput.textContent=newString;
-
-    if (newString == ''){
-        let currentNumber2=pastInput.textContent
-        console.log(currentNumber2)
-        let newNum2=currentNumber2.substring(0,currentNumber2.length-1)
-        console.log(newNum2)
-        let newString2=newNum2.replace(/.$/,'');
-        pastInput.textContent=newString2;
-    }
+   userInput.textContent=userInput.textContent
+   .toString()
+   .slice(0,-1)
 }
+
 function allClear(){
-    userInput.textContent='';
+    userInput.textContent='0';
     pastInput.textContent='';
-    firstOperand=null;
-    secondOperand=null;
+    firstOperand='';
+    secondOperand='';
+    operatorChosen=null
+    
 }
 function reset(){
     display_container.classList.remove('shameOnYou')
@@ -82,6 +69,9 @@ function reset(){
     resetScreen=false;
 }
 function setOperation(operator){
+
+   if(operatorChosen!=null){evaluate()}
+
     firstOperand=userInput.textContent
     operatorChosen=operator
     pastInput.textContent=`${firstOperand}${operatorChosen}`
@@ -91,19 +81,19 @@ function setOperation(operator){
 
 
 function evaluate(){
+    if(userInput===null) return
     if(userInput.textContent==='0'&&operatorChosen==='÷'){
         display_container.classList.add('shameOnYou')
-
-
         pastInput.textContent='';
         userInput.textContent=`can't divide by 0`
         resetScreen=true;
         return
-       
     }
+  
     secondOperand = userInput.textContent;
     userInput.textContent= roundNumber(operate(firstOperand,operatorChosen,secondOperand))
     pastInput.textContent= `${firstOperand}${operatorChosen}${secondOperand}`
+    operatorChosen=null;
 }
 
 function operate(a,operator,b){
@@ -118,6 +108,8 @@ function operate(a,operator,b){
             return(num1*num2)
         case '÷':
             return(num1/num2)
+        default:
+            return null;
     }
     
 }
